@@ -1,4 +1,4 @@
-﻿using Stoqui.Kernel.Domain.Exceptons;
+﻿using Stoqui.Kernel.Domain.Exceptions;
 
 namespace Stoqui.Kernel.Domain.Objects;
 

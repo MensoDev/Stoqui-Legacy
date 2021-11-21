@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Stoqui.Kernel.Domain.Exceptons;
+using Stoqui.Kernel.Domain.Exceptions;
 using Stoqui.Stock.Domain.Entities;
 using System;
 
