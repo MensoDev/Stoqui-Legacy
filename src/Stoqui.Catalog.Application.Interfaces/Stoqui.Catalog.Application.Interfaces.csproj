@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\ProductModel.cs~RF10439273.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flunt" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stoqui.Catalog.Domain\Stoqui.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Stoqui.Kernel.Domain\Stoqui.Kernel.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
