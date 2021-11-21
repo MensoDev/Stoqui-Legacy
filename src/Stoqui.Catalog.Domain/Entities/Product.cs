@@ -2,7 +2,7 @@
 
 namespace Stoqui.Catalog.Domain.Entities;
 
-public class Product : Entity
+public class Product : Entity, IAggregateRoot
 {
     public Product(string name, string description)
     {
