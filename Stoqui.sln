@@ -31,9 +31,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{17C0FC03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Stock.Domain.Tests", "tests\Stoqui.Stock.Domain.Tests\Stoqui.Stock.Domain.Tests.csproj", "{AFB764F0-2CF8-409C-B719-7BF5A31E944F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Catalog.Application", "src\Stoqui.Catalog.Application\Stoqui.Catalog.Application.csproj", "{6E6920BE-A70F-4BE8-A934-15AEB14C3A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Catalog.Application", "src\Stoqui.Catalog.Application\Stoqui.Catalog.Application.csproj", "{6E6920BE-A70F-4BE8-A934-15AEB14C3A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Catalog.Application.Interfaces", "src\Stoqui.Catalog.Application.Interfaces\Stoqui.Catalog.Application.Interfaces.csproj", "{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Catalog.Application.Interfaces", "src\Stoqui.Catalog.Application.Interfaces\Stoqui.Catalog.Application.Interfaces.csproj", "{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{36E0F0D3-8492-4019-9B1E-38937FD0392E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Catalog.Infrastructure.DataAccess", "src\Stoqui.Catalog.Infrastructure.DataAccess\Stoqui.Catalog.Infrastructure.DataAccess.csproj", "{80AE2004-4E07-4CCF-B6FC-1D7372181FB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AE2004-4E07-4CCF-B6FC-1D7372181FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AE2004-4E07-4CCF-B6FC-1D7372181FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AE2004-4E07-4CCF-B6FC-1D7372181FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AE2004-4E07-4CCF-B6FC-1D7372181FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,8 @@ Global
 		{AFB764F0-2CF8-409C-B719-7BF5A31E944F} = {17C0FC03-EB21-492E-AB37-134CF973FAE7}
 		{6E6920BE-A70F-4BE8-A934-15AEB14C3A6C} = {114532D3-5AFB-497D-90B4-46939BA02F11}
 		{B89340C8-87E4-4FF8-9E3B-AA76FE396CCF} = {114532D3-5AFB-497D-90B4-46939BA02F11}
+		{36E0F0D3-8492-4019-9B1E-38937FD0392E} = {114532D3-5AFB-497D-90B4-46939BA02F11}
+		{80AE2004-4E07-4CCF-B6FC-1D7372181FB3} = {36E0F0D3-8492-4019-9B1E-38937FD0392E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52583338-D562-4DC4-8D6B-28A0F14BAF42}

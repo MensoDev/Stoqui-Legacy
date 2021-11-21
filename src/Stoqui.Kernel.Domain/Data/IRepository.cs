@@ -4,6 +4,6 @@ namespace Stoqui.Kernel.Domain.Data;
 
 public interface IRepository<T> : IDisposable where T : class, IAggregateRoot
 {
-    public IUnitOfWork UnitOfWork { get; init; }
+    public IUnitOfWork UnitOfWork { get; }
 }
 
