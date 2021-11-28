@@ -3,7 +3,7 @@ using Stoqui.Stock.Domain.Enums;
 
 namespace Stoqui.Stock.Domain.Entities;
 
-public class TransactionTopic : Entity
+public class TransactionTopic : Entity, IAggregateRoot
 {
 
     public TransactionTopic(string name, EStockType stockType, EStockAction stockAction)
@@ -20,7 +20,7 @@ public class TransactionTopic : Entity
     public EStockAction StockAction { get; private set; }
 
 
-    protected override void Validate()
+    protected sealed override void Validate()
     {
         AssertionConcern.NotEmpty(Name, "Name is required");
     }

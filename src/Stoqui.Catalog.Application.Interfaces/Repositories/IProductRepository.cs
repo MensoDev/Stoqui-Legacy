@@ -5,10 +5,12 @@ namespace Stoqui.Catalog.Application.Interfaces.Repositories;
 
 public interface IProductRepository : IRepository<Product>
 {
-    ValueTask AddProductAsync(Product product);
-    ValueTask<Product> GetProductByIdAsync(Guid productId);
+    //Setters
 
-    void DeleteProduct(Product product);
-    void UpdateProduct(Product product);
+    //Getters
+
+    //Delete
+
+    //Update
 }
 

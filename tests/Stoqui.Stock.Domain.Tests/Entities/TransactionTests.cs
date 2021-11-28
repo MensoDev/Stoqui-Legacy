@@ -8,11 +8,13 @@ namespace Stoqui.Stock.Domain.Tests.Entities;
 [TestClass]
 public class TransactionTests
 {
+
+    public static Transaction ValidTransaction => new("Is Valid Description", "Stockist Name", "Requester Name"); 
+
     [TestMethod]
     public void ShouldReturnSuccessWhenTransactionIsValid()
     {
-        Transaction transaction = new("Está é uma descrição valida", new Product(Guid.NewGuid()), 1, "Emerson", "Tony");
-        Assert.IsNotNull(transaction);
+        Assert.IsNotNull(ValidTransaction);
     }
 
     [TestMethod]
@@ -20,34 +22,17 @@ public class TransactionTests
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            Transaction transaction = new(string.Empty, new Product(Guid.NewGuid()), 1, "Emerson", "Tony");
+            Transaction transaction = new(string.Empty, "Stockist Name", "Requester Namer");
         });
     }
 
-    [TestMethod]
-    public void ShouldReturnSuccessWhenProductIsInvalid()
-    {
-        Assert.ThrowsException<AssertionConcernException>(() =>
-        {
-            Transaction transaction = new("Descrição valida", new Product(Guid.Empty), 1, "Emerson", "Tony");
-        });
-    }
-
-    [TestMethod]
-    public void ShouldReturnSuccessWhenAmountIsInvalid()
-    {
-        Assert.ThrowsException<AssertionConcernException>(() =>
-        {
-            Transaction transaction = new("Descrição valida", new Product(Guid.NewGuid()), -1, "Emerson", "Tony");
-        });
-    }
 
     [TestMethod]
     public void ShouldReturnSuccessWhenStockistIsInvalid()
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            Transaction transaction = new("Descrição valida", new Product(Guid.NewGuid()), -1, string.Empty, "Tony");
+            Transaction transaction = new("Is Valid Description", string.Empty, "Requester Name");
         });
     }
 
@@ -56,7 +41,7 @@ public class TransactionTests
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            Transaction transaction = new("Descrição valida", new Product(Guid.NewGuid()), -1, "Emerson", string.Empty);
+            Transaction transaction = new("Is Valid Description", "Stockist Name", string.Empty);
         });
     }
 }

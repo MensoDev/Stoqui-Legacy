@@ -5,12 +5,12 @@ namespace Stoqui.Stock.Domain.Entities;
 public class Product : Entity, IAggregateRoot
 {
 
-    private List<Transaction> _transactions;
+    private List<TransactionItem> _transactionItems = new();
 
-    public Product(Guid productId)
+    public Product(Guid productId, string name)
     {
+        Name = name;
         Id = productId;
-        _transactions = new();
 
         ActiveStock = 0;
         RepairStock = 0;
@@ -19,15 +19,19 @@ public class Product : Entity, IAggregateRoot
         Validate();
     }
 
+    public string Name { get; private set; }
 
     public int ActiveStock { get; private set; }
     public int RepairStock { get; private set; }
     public int TrashStock { get; private set; }
-    public IReadOnlyCollection<Transaction> Transactions => _transactions;
 
-    protected override void Validate()
+
+    public IReadOnlyCollection<TransactionItem> TransactionItems => _transactionItems;
+
+    protected sealed override void Validate()
     {
         AssertionConcern.NotEmpty(Id, "Product.Id is required");
+        AssertionConcern.NotEmpty(Name, "Product Name is required");
     }
 
 

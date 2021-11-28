@@ -36,5 +36,11 @@ public static class AssertionConcern
 
     #region Assertion State
     #endregion
+
+    public static void NotImplementedException(string errorMessage = "Not Implemented Exception")
+    {
+        AssertionConcernException.ThrowException(errorMessage);
+    }
+
 }
 

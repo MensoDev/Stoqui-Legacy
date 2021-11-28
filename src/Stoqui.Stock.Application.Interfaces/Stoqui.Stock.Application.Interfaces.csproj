@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.3.4" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <ProjectReference Include="..\Stoqui.Kernel.Domain\Stoqui.Kernel.Domain.csproj" />
+    <ProjectReference Include="..\Stoqui.Stock.Domain\Stoqui.Stock.Domain.csproj" />
   </ItemGroup>
 
 </Project>

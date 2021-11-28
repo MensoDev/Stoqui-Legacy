@@ -8,10 +8,13 @@ namespace Stoqui.Stock.Domain.Tests.Entities;
 [TestClass]
 public class TransactionTopicTests
 {
+    
+    public static TransactionTopic ValidTopic = new("Name The Topic", EStockType.ActiveStock, EStockAction.Input);
+
     [TestMethod]
     public void ShouldReturnSuccessWhenTransactionTopicNameIsValid()
     {
-        TransactionTopic topic = new TransactionTopic("Name The Topic", EStockType.ActiveStock, EStockAction.Input);
+        var topic = new TransactionTopic("Name The Topic", EStockType.ActiveStock, EStockAction.Input);
 
         Assert.IsNotNull(topic);
         Assert.AreEqual(topic.Name, "Name The Topic");
@@ -22,7 +25,7 @@ public class TransactionTopicTests
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            TransactionTopic topic = new TransactionTopic(string.Empty, EStockType.ActiveStock, EStockAction.Input);
+            var topic = new TransactionTopic(string.Empty, EStockType.ActiveStock, EStockAction.Input);
         });
     }
 }
