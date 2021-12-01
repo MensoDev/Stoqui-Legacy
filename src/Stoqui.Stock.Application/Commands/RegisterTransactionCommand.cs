@@ -1,4 +1,5 @@
 ﻿using Stoqui.Kernel.Domain.Messages;
+using Stoqui.Stock.Application.Validations;
 
 namespace Stoqui.Stock.Application.Commands;
 
@@ -17,6 +18,7 @@ public class RegisterTransactionCommand : Command
 
     public override bool IsValid()
     {
-        throw new NotImplementedException();
+        ValidationResult = new RegisterTransactionCommandValidation().Validate(this);
+        return ValidationResult.IsValid;
     }
 }

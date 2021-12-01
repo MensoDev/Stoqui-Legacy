@@ -11,12 +11,14 @@ namespace Stoqui.Catalog.Application.Interfaces.Models
             RegistrationDate = registrationDate;
             Name = name;
             Description = description;
+            Validate();
         }
 
         public ProductModel()
         {
             Name = string.Empty;
             Description = string.Empty;
+            Validate();
         }
 
         public Guid Id { get; set; }
@@ -24,7 +26,7 @@ namespace Stoqui.Catalog.Application.Interfaces.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public void Validate()
+        private void Validate()
         {
             var contract = new Contract<Notification>()
                 .IsNotEmpty(Name, "The Product Name is required")

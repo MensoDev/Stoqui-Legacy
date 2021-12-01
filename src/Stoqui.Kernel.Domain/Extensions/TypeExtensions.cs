@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
 
-namespace TryFi.Kernel.Domain.Extensions
+namespace Stoqui.Kernel.Domain.Extensions
 {
     public static class TypeExtensions
     {

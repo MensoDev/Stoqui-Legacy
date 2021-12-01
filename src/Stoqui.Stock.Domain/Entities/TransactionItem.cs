@@ -4,7 +4,7 @@ namespace Stoqui.Stock.Domain.Entities;
 
 public class TransactionItem : Entity
 {
-    public TransactionItem(Product product, Transaction transaction, short amount, TransactionTopic topic)
+    public TransactionItem(Product product, Transaction transaction, ushort amount, TransactionTopic topic)
     {
         AssertionConcern.NotNull(product, "Product is Required");
         AssertionConcern.NotNull(transaction, "Transaction is Required");
@@ -31,7 +31,7 @@ public class TransactionItem : Entity
     public Product Product { get; private set; }
     public Guid ProductId { get; private set; } 
 
-    public short Amount { get; private set; }
+    public ushort Amount { get; private set; }
 
     public TransactionTopic Topic { get; private set; }
     public Guid TopicId { get; private set; }

@@ -13,7 +13,7 @@ public interface IRepository<TEntity> : IDisposable where TEntity : class, IAggr
 
     //Generic Getters
     ValueTask<PagingResult<TEntity>> PaginationAsync(Paging<TEntity> paging);
-    ValueTask<TEntity> GetByIdAsync(Guid entityId);
+    ValueTask<TEntity?> GetByIdAsync(Guid entityId);
 
     //Generic Updates
     void Update(TEntity entity);
