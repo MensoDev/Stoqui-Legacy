@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stoqui.Catalog.Application\Stoqui.Catalog.Application.csproj" />
+    <ProjectReference Include="..\Stoqui.Catalog.Infrastructure.DataAccess\Stoqui.Catalog.Infrastructure.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

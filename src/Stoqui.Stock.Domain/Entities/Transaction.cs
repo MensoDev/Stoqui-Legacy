@@ -18,6 +18,9 @@ public class Transaction : Entity, IAggregateRoot
         Validate();
     }
 
+    protected Transaction()
+    {}
+
     public string Description { get; private set; }    
     public string Stockist { get; private set; }
     public string Requester { get; private set; }

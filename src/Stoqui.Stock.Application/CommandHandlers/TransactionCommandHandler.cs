@@ -53,6 +53,7 @@ public class TransactionCommandHandler :
         {
             await _mediatorHandler.PublishNotificationAsync("RegisterTransactionItemCommand.ProductId", 
                 "Product not exist");
+            return false;
         }
 
         var transaction = await _transactionRepository.GetByIdAsync(request.TransactionId);
@@ -61,6 +62,7 @@ public class TransactionCommandHandler :
         {
             await _mediatorHandler.PublishNotificationAsync("RegisterTransactionItemCommand.TransactionId",
                 "Transaction not exist");
+            return false;
         }
 
         var topic = await _transactionTopicRepository.GetByIdAsync(request.TopicId);
@@ -69,6 +71,7 @@ public class TransactionCommandHandler :
         {
             await _mediatorHandler.PublishNotificationAsync("RegisterTransactionItemCommand.TransactionTopicId",
                 "Transaction Topic not exist");
+            return false;
         }
 
         var transactionItem = new TransactionItem(product, transaction, request.Amount, topic);

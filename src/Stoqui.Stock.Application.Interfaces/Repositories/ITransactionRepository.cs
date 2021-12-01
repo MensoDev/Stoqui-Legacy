@@ -10,8 +10,8 @@ public interface ITransactionRepository : IRepository<Transaction>
     ValueTask AddTransactionItemAsync(TransactionItem item);
 
     //Getters
-    ValueTask<TransactionItem> GetTransactionItemByIdAsync(Guid transactionItemId);
-    ValueTask<TransactionItem> GetTransactionItemByTransactionIdAsync(Guid transactionId);
+    ValueTask<TransactionItem?> GetTransactionItemByIdAsync(Guid transactionItemId);
+    ValueTask<IEnumerable<TransactionItem>> GetTransactionItemsByTransactionIdAsync(Guid transactionId);
 
     //Updates
     void UpdateTransactionItem(TransactionItem item);

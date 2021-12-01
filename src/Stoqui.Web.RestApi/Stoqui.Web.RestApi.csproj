@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stoqui.Catalog.Infrastructure.DataAccess\Stoqui.Catalog.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\Stoqui.Catalog.Infrastructure.IoC\Stoqui.Catalog.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\Stoqui.Kernel.Infrastructure.IoC\Stoqui.Kernel.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\Stoqui.Stock.Infrastructure.IoC\Stoqui.Stock.Infrastructure.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

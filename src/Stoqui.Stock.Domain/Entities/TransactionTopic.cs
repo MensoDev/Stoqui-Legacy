@@ -15,6 +15,9 @@ public class TransactionTopic : Entity, IAggregateRoot
         Validate();
     }
 
+    private TransactionTopic()
+    {}
+
     public string Name { get; private set; }
     public EStockType StockType { get; private set; }
     public EStockAction StockAction { get; private set; }

@@ -18,6 +18,9 @@ public class Product : Entity, IAggregateRoot
 
         Validate();
     }
+    
+    protected Product()
+    {}
 
     public string Name { get; private set; }
 
