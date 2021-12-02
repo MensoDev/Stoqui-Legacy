@@ -5,12 +5,11 @@ using Stoqui.Stock.Infrastructure.IoC;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-builder.Services.KernelConfigure(typeof(Program));
-builder.Services.CatalogConfigure("");
-builder.Services.StockConfigure("");
+builder.Services.AddKernelConfigure(typeof(Program));
+builder.Services.AddCatalogConfigure(builder.Configuration.GetConnectionString("CatalogConnection"));
+builder.Services.AddStockConfigure(builder.Configuration.GetConnectionString("StockConnection"));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

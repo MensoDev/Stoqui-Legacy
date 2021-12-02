@@ -4,11 +4,11 @@ using Stoqui.Catalog.Domain.Entities;
 
 namespace Stoqui.Catalog.Application.Profiles;
 
-public class ProductProfile : Profile
+public class RegisterProductModelProfile : Profile
 {
-    public ProductProfile()
+    public RegisterProductModelProfile()
     {
-        CreateMap<Product, ProductModel>();
+        CreateMap<Product, RegisterProductModel>();
     }
 }
 

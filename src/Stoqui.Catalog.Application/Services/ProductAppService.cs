@@ -23,7 +23,7 @@ public class ProductAppService : IProductAppService
         _mediatorHandler = mediatorHandler;
     }
 
-    public async ValueTask<bool> RegisterProductAsync(ProductModel model)
+    public async ValueTask<bool> RegisterProductAsync(RegisterProductModel model)
     {
         await _mediatorHandler.ValidateModelAsync(model);
 

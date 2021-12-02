@@ -61,9 +61,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{D9D37F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUI", "WebUI", "{D5A728C2-EA83-4C9A-B578-8A43807331F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Kernel.Infrastructure.IoC", "src\Stoqui.Kernel.Infrastructure.IoC\Stoqui.Kernel.Infrastructure.IoC.csproj", "{6DB62222-63AF-4AE5-95BE-A2E2C2972B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Kernel.Infrastructure.IoC", "src\Stoqui.Kernel.Infrastructure.IoC\Stoqui.Kernel.Infrastructure.IoC.csproj", "{6DB62222-63AF-4AE5-95BE-A2E2C2972B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Web.RestApi", "src\Stoqui.Web.RestApi\Stoqui.Web.RestApi.csproj", "{57F713BE-337D-43EC-AEB6-43743D44F8F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Web.RestApi", "src\Stoqui.Web.RestApi\Stoqui.Web.RestApi.csproj", "{57F713BE-337D-43EC-AEB6-43743D44F8F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedModel", "SharedModel", "{7DBC4F76-D942-410A-960D-4B0E966CB6FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Models", "src\Stoqui.Models\Stoqui.Models.csproj", "{F31B288C-91C7-4030-81BB-457F29DC8BF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Kernel.Infrastructure.DataAccess", "src\Stoqui.Kernel.Infrastructure.DataAccess\Stoqui.Kernel.Infrastructure.DataAccess.csproj", "{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +141,14 @@ Global
 		{57F713BE-337D-43EC-AEB6-43743D44F8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57F713BE-337D-43EC-AEB6-43743D44F8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57F713BE-337D-43EC-AEB6-43743D44F8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31B288C-91C7-4030-81BB-457F29DC8BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31B288C-91C7-4030-81BB-457F29DC8BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31B288C-91C7-4030-81BB-457F29DC8BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31B288C-91C7-4030-81BB-457F29DC8BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +183,9 @@ Global
 		{D5A728C2-EA83-4C9A-B578-8A43807331F1} = {D30D2864-76B3-4B38-B496-3A6172D79BDA}
 		{6DB62222-63AF-4AE5-95BE-A2E2C2972B5C} = {C0AF9B86-2A0A-44F2-956D-6DB43CD70681}
 		{57F713BE-337D-43EC-AEB6-43743D44F8F7} = {A6B9057B-8E99-4EE3-B032-401C4E3E71B0}
+		{7DBC4F76-D942-410A-960D-4B0E966CB6FA} = {D30D2864-76B3-4B38-B496-3A6172D79BDA}
+		{F31B288C-91C7-4030-81BB-457F29DC8BF6} = {7DBC4F76-D942-410A-960D-4B0E966CB6FA}
+		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3} = {C0AF9B86-2A0A-44F2-956D-6DB43CD70681}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52583338-D562-4DC4-8D6B-28A0F14BAF42}

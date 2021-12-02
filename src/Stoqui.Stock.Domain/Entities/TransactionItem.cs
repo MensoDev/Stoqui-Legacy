@@ -23,8 +23,9 @@ public class TransactionItem : Entity
         Validate();
     }
 
-    protected TransactionItem()
-    { }
+    private TransactionItem()
+    {}
+    
 
     public Transaction Transaction { get; private set; }
     public Guid TransactionId { get; private set; }

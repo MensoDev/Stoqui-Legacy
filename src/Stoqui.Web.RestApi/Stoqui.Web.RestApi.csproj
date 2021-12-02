@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -14,6 +18,7 @@
     <ProjectReference Include="..\Stoqui.Catalog.Infrastructure.DataAccess\Stoqui.Catalog.Infrastructure.DataAccess.csproj" />
     <ProjectReference Include="..\Stoqui.Catalog.Infrastructure.IoC\Stoqui.Catalog.Infrastructure.IoC.csproj" />
     <ProjectReference Include="..\Stoqui.Kernel.Infrastructure.IoC\Stoqui.Kernel.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\Stoqui.Models\Stoqui.Models.csproj" />
     <ProjectReference Include="..\Stoqui.Stock.Infrastructure.IoC\Stoqui.Stock.Infrastructure.IoC.csproj" />
   </ItemGroup>
 

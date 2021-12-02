@@ -11,7 +11,7 @@ namespace Stoqui.Catalog.Infrastructure.IoC;
 
 public static class CatalogBootstrap
 {
-    public static void CatalogConfigure(this IServiceCollection service, string connectionString)
+    public static void AddCatalogConfigure(this IServiceCollection service, string connectionString)
     {
         service.AddDbContext<CatalogDbContext>(options =>
         {
@@ -23,7 +23,7 @@ public static class CatalogBootstrap
         
         service.AddAutoMapper(options =>
         {
-            options.AddProfile<ProductProfile>();
+            options.AddProfile<RegisterProductModelProfile>();
         });
 
     }

@@ -4,6 +4,6 @@ namespace Stoqui.Catalog.Application.Interfaces.Services;
 
 public interface IProductAppService : IDisposable
 {
-    ValueTask<bool> RegisterProductAsync(ProductModel model);
+    ValueTask<bool> RegisterProductAsync(RegisterProductModel model);
 }
 

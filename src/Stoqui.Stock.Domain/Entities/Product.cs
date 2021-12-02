@@ -18,10 +18,10 @@ public class Product : Entity, IAggregateRoot
 
         Validate();
     }
-    
-    protected Product()
-    {}
 
+    private Product()
+    {}      
+    
     public string Name { get; private set; }
 
     public int ActiveStock { get; private set; }

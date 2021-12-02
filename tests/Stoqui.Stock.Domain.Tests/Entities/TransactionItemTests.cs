@@ -53,7 +53,7 @@ public class TransactionItemTests
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            TransactionItem item = new(ProductTests.ValidProduct, TransactionTests.ValidTransaction, -1, TransactionTopicTests.ValidTopic);
+            TransactionItem item = new(ProductTests.ValidProduct, TransactionTests.ValidTransaction, 0, TransactionTopicTests.ValidTopic);
         });
     }
 
@@ -62,7 +62,7 @@ public class TransactionItemTests
     {
         Assert.ThrowsException<AssertionConcernException>(() =>
         {
-            TransactionItem item = new(ProductTests.ValidProduct, TransactionTests.ValidTransaction, -1, null);
+            TransactionItem item = new(ProductTests.ValidProduct, TransactionTests.ValidTransaction, 3, null);
         });
     }
 

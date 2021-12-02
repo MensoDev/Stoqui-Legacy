@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Stoqui.Kernel.Domain.Messages.IntegrationEvents;
 using Stoqui.Stock.Application.CommandHandlers;
 using Stoqui.Stock.Application.Commands;
+using Stoqui.Stock.Application.EventHandlers;
 using Stoqui.Stock.Application.Interfaces.Repositories;
 using Stoqui.Stock.Infrastructure.DataAccess;
 using Stoqui.Stock.Infrastructure.DataAccess.Repositories;
@@ -11,7 +13,7 @@ namespace Stoqui.Stock.Infrastructure.IoC;
 
 public static class StockBootstrap 
 {
-    public static void StockConfigure(this IServiceCollection service, string connectionString)
+    public static void AddStockConfigure(this IServiceCollection service, string connectionString)
     {
         service.AddDbContext<StockDbContext>(options =>
         {
@@ -27,6 +29,8 @@ public static class StockBootstrap
         service.AddTransient<IRequestHandler<RegisterTransactionCommand, bool>, TransactionCommandHandler>();
         service.AddTransient<IRequestHandler<RegisterTransactionItemCommand, bool>, TransactionCommandHandler>();
 
+        //Events
+        service.AddScoped<INotificationHandler<SuccessfullyRegisteredProductEvent>, ProductEventHandler>();
 
         //Repositories
         service.AddScoped<IProductRepository, ProductRepository>();

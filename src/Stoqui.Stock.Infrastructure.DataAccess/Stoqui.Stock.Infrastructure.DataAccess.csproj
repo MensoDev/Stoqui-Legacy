@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Stoqui.Kernel.Infrastructure.DataAccess\Stoqui.Kernel.Infrastructure.DataAccess.csproj" />
     <ProjectReference Include="..\Stoqui.Stock.Application.Interfaces\Stoqui.Stock.Application.Interfaces.csproj" />
     <ProjectReference Include="..\Stoqui.Stock.Domain\Stoqui.Stock.Domain.csproj" />
   </ItemGroup>

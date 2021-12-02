@@ -21,6 +21,8 @@ namespace Stoqui.Kernel.Domain.Objects
 
         protected abstract void Validate();
 
+        public IReadOnlyCollection<Event> Events => _events;
+
         public void AddEvent(Event eventItem)
         {
             _events ??= new();

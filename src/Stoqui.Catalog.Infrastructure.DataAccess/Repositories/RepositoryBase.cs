@@ -59,7 +59,7 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEnti
             await  query.ToListAsync());
     }
 
-    public async ValueTask<TEntity> GetByIdAsync(Guid entityId)
+    public async ValueTask<TEntity?> GetByIdAsync(Guid entityId)
     {
         return await dbSet.FindAsync(entityId);
     }

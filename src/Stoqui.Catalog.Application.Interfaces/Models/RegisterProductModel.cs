@@ -3,26 +3,22 @@ using Flunt.Validations;
 
 namespace Stoqui.Catalog.Application.Interfaces.Models
 {
-    public class ProductModel : Notifiable<Notification>
+    public class RegisterProductModel : Notifiable<Notification>
     {
-        public ProductModel(Guid id, DateTime registrationDate, string name, string description)
+        public RegisterProductModel(string name, string description)
         {
-            Id = id;
-            RegistrationDate = registrationDate;
             Name = name;
             Description = description;
             Validate();
         }
 
-        public ProductModel()
+        public RegisterProductModel()
         {
             Name = string.Empty;
             Description = string.Empty;
             Validate();
         }
-
-        public Guid Id { get; set; }
-        public DateTime RegistrationDate { get; set; }
+        
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -33,7 +29,6 @@ namespace Stoqui.Catalog.Application.Interfaces.Models
                 .IsNotEmpty(Description, "The Product Description is required");
 
             AddNotifications(contract);
-          
         }
 
     }

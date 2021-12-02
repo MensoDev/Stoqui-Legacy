@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Stoqui.Catalog.Application.Interfaces\Stoqui.Catalog.Application.Interfaces.csproj" />
     <ProjectReference Include="..\Stoqui.Catalog.Domain\Stoqui.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Stoqui.Kernel.Infrastructure.DataAccess\Stoqui.Kernel.Infrastructure.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
