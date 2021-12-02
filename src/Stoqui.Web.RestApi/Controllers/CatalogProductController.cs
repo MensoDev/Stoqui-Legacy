@@ -5,21 +5,23 @@ using Stoqui.Catalog.Application.Interfaces.Services;
 using Stoqui.Kernel.Domain.Communication.Mediator;
 using Stoqui.Kernel.Domain.Messages.Notifications;
 using Stoqui.Models;
+using Stoqui.Stock.Application.Interfaces.Queries;
 
 namespace Stoqui.Web.RestApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductController : StoquiControllerBase
+    public class CatalogProductController : StoquiControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
+        private readonly ILogger<CatalogProductController> _logger;
         private  readonly IProductAppService _productAppService;
 
-        public ProductController(
-            ILogger<ProductController> logger, 
+        public CatalogProductController(
+            ILogger<CatalogProductController> logger, 
             IProductAppService productAppService,
             INotificationHandler<DomainNotification> notifications, 
-            IMediatorHandler mediatorHandler) 
+            IMediatorHandler mediatorHandler, 
+            IStockProductQueries productQueries) 
             : base(notifications, mediatorHandler)
         {
             _logger = logger;
@@ -42,6 +44,7 @@ namespace Stoqui.Web.RestApi.Controllers
 
             return Ok("Success");
         }
-       
+        
+
     }
 }

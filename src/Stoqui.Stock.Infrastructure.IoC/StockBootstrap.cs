@@ -5,7 +5,10 @@ using Stoqui.Kernel.Domain.Messages.IntegrationEvents;
 using Stoqui.Stock.Application.CommandHandlers;
 using Stoqui.Stock.Application.Commands;
 using Stoqui.Stock.Application.EventHandlers;
+using Stoqui.Stock.Application.Interfaces.Queries;
 using Stoqui.Stock.Application.Interfaces.Repositories;
+using Stoqui.Stock.Application.Queries;
+using Stoqui.Stock.Application.Queries.MapperProfile;
 using Stoqui.Stock.Infrastructure.DataAccess;
 using Stoqui.Stock.Infrastructure.DataAccess.Repositories;
 
@@ -20,7 +23,6 @@ public static class StockBootstrap
             options.UseSqlServer(connectionString);
         });
 
-
         //Commands ans Handler
         service.AddTransient<IRequestHandler<RegisterProductCommand, bool>, ProductCommandHandler>();
 
@@ -29,6 +31,9 @@ public static class StockBootstrap
         service.AddTransient<IRequestHandler<RegisterTransactionCommand, bool>, TransactionCommandHandler>();
         service.AddTransient<IRequestHandler<RegisterTransactionItemCommand, bool>, TransactionCommandHandler>();
 
+        //Queries
+        service.AddTransient<IStockProductQueries, StockProductQueries>();
+
         //Events
         service.AddScoped<INotificationHandler<SuccessfullyRegisteredProductEvent>, ProductEventHandler>();
 
@@ -36,5 +41,10 @@ public static class StockBootstrap
         service.AddScoped<IProductRepository, ProductRepository>();
         service.AddScoped<ITransactionTopicRepository, TransactionTopicRepository>();
         service.AddScoped<ITransactionRepository, TransactionRepository>();
+
+        service.AddAutoMapper(options =>
+        {
+            options.AddProfile<ProductStockProfile>();
+        });
     }
 }

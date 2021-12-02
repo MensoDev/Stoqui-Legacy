@@ -6,7 +6,7 @@ public class Paging<TEntity>
 {
 
     public Paging(
-        ushort pageNumber = 1, 
+        int pageNumber = 1, 
         ushort pageSize = 10, 
         Expression<Func<TEntity, bool>> filter = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
@@ -23,7 +23,7 @@ public class Paging<TEntity>
         ChangeToOneWhenZeroInPageNumberAndPageSize();
     }
 
-    public ushort PageNumber { get; private set; }
+    public int PageNumber { get; private set; }
     public ushort PageSize { get; private set; }
 
 

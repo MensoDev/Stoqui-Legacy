@@ -47,11 +47,12 @@ public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : clas
             query = paging.OrderBy(query);
         }
 
-        query.Pagination(paging.PageNumber, paging.PageSize);
+        var totalPages = query.GetTotalPage(paging.PageSize);
+        query = query.Pagination(paging.PageNumber, paging.PageSize);
 
 
         return new PagingResult<TEntity>(
-            query.GetTotalPage(paging.PageSize),
+            totalPages,
             paging.PageNumber,
             paging.PageSize,
             await query.ToListAsync());
