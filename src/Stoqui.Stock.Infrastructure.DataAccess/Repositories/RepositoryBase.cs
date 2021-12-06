@@ -48,6 +48,7 @@ public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : clas
         }
 
         var totalPages = query.GetTotalPage(paging.PageSize);
+        var totalItems = await query.CountAsync();
         query = query.Pagination(paging.PageNumber, paging.PageSize);
 
 
@@ -55,6 +56,7 @@ public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : clas
             totalPages,
             paging.PageNumber,
             paging.PageSize,
+            totalItems,
             await query.ToListAsync());
     }
 

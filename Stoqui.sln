@@ -69,7 +69,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedModel", "SharedModel"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Models", "src\Stoqui.Models\Stoqui.Models.csproj", "{F31B288C-91C7-4030-81BB-457F29DC8BF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stoqui.Kernel.Infrastructure.DataAccess", "src\Stoqui.Kernel.Infrastructure.DataAccess\Stoqui.Kernel.Infrastructure.DataAccess.csproj", "{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Kernel.Infrastructure.DataAccess", "src\Stoqui.Kernel.Infrastructure.DataAccess\Stoqui.Kernel.Infrastructure.DataAccess.csproj", "{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stoqui.Web.BlazorWasm", "src\Stoqui.Web.BlazorWasm\Stoqui.Web.BlazorWasm.csproj", "{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +151,10 @@ Global
 		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +192,7 @@ Global
 		{7DBC4F76-D942-410A-960D-4B0E966CB6FA} = {D30D2864-76B3-4B38-B496-3A6172D79BDA}
 		{F31B288C-91C7-4030-81BB-457F29DC8BF6} = {7DBC4F76-D942-410A-960D-4B0E966CB6FA}
 		{77276C52-9A5C-451E-A29F-92C5A6F4A9F3} = {C0AF9B86-2A0A-44F2-956D-6DB43CD70681}
+		{B9BA557B-8EE8-4BDD-99C6-EBB0FDFB013A} = {D5A728C2-EA83-4C9A-B578-8A43807331F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52583338-D562-4DC4-8D6B-28A0F14BAF42}

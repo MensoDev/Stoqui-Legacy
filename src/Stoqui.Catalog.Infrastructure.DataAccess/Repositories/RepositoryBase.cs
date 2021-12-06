@@ -49,13 +49,14 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEnti
             query = paging.OrderBy(query);
         }
 
-        query.Pagination(paging.PageNumber, paging.PageSize);
+        query = query.Pagination(paging.PageNumber, paging.PageSize);
 
 
         return new PagingResult<TEntity>(
             query.GetTotalPage(paging.PageSize), 
             paging.PageNumber, 
-            paging.PageSize, 
+            paging.PageSize,
+            await query.CountAsync(),
             await  query.ToListAsync());
     }
 

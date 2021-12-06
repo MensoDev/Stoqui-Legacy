@@ -8,8 +8,8 @@ public class Paging<TEntity>
     public Paging(
         int pageNumber = 1, 
         ushort pageSize = 10, 
-        Expression<Func<TEntity, bool>> filter = null,
-        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        Expression<Func<TEntity, bool>>? filter = null,
+        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
         string includeProperties = "")
     {
         

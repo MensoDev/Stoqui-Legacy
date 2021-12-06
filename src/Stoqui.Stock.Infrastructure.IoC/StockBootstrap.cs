@@ -33,6 +33,7 @@ public static class StockBootstrap
 
         //Queries
         service.AddTransient<IStockProductQueries, StockProductQueries>();
+        service.AddTransient<ITransactionTopicQueries, TransactionTopicQueries>();
 
         //Events
         service.AddScoped<INotificationHandler<SuccessfullyRegisteredProductEvent>, ProductEventHandler>();
@@ -45,6 +46,7 @@ public static class StockBootstrap
         service.AddAutoMapper(options =>
         {
             options.AddProfile<ProductStockProfile>();
+            options.AddProfile<TransactionTopicProfile>();
         });
     }
 }

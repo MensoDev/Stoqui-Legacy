@@ -5,7 +5,7 @@ using Stoqui.Catalog.Application.Interfaces.Services;
 using Stoqui.Kernel.Domain.Communication.Mediator;
 using Stoqui.Kernel.Domain.Messages.Notifications;
 using Stoqui.Models;
-using Stoqui.Stock.Application.Interfaces.Queries;
+using Stoqui.Models.Catalog;
 
 namespace Stoqui.Web.RestApi.Controllers
 {
@@ -20,8 +20,7 @@ namespace Stoqui.Web.RestApi.Controllers
             ILogger<CatalogProductController> logger, 
             IProductAppService productAppService,
             INotificationHandler<DomainNotification> notifications, 
-            IMediatorHandler mediatorHandler, 
-            IStockProductQueries productQueries) 
+            IMediatorHandler mediatorHandler) 
             : base(notifications, mediatorHandler)
         {
             _logger = logger;
@@ -31,18 +30,20 @@ namespace Stoqui.Web.RestApi.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterProductAsync([FromBody] RegisterProductViewModel? model)
         {
-            if (!ModelState.IsValid || model == null)
-            {
-                return BadRequest("Register Product: Parameters invalid");
+            if (model == null)
+            { 
+                _logger.LogWarning("RegisterProductAsync: Bad request");
+                return BadRequest(new ApiResult("Product not registered", false));
             }
 
             var registerProductModel = new RegisterProductModel(model.Name, model.Description);
             var success = await _productAppService.RegisterProductAsync(registerProductModel);
 
             if (HasNotification())
-                return BadRequest(new ApiResult("Product Registered", false, GetNotification()));
+                return BadRequest(new ApiResult("Product not registered", success, GetNotification()));
 
-            return Ok("Success");
+            _logger.LogInformation("Registered a new product");
+            return Ok(new ApiResult("Product Registered", success, new List<string>()));
         }
         
 

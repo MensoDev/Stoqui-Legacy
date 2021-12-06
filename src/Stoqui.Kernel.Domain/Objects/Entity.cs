@@ -40,14 +40,11 @@ namespace Stoqui.Kernel.Domain.Objects
         }
 
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             var compareTo = obj as Entity;
-
             if (ReferenceEquals(this, compareTo)) return true;
-            if (compareTo is null) return false;
-
-            return Id.Equals(compareTo.Id);
+            return compareTo is not null && Id.Equals(compareTo.Id);
         }
 
         public static bool operator ==(Entity? a, Entity? b)
